@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CRUD Operations</h1>
+
+    <!-- Create Operation - Insert -->
+    <h2>Create Record</h2>
+    <form action="/insert" method="post">
+        <table>
+            <tr>
+                <td>Date:</td>
+                <td><input type="date" name="Create_date" required></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" name="Create_description" required></td>
+            </tr>
+            <tr>
+                <td>Amount (Enter in USD):</td>
+                <td><input type="text" name="Create_amount" required></td>
+            </tr>
+            </table>
+        <input type="submit" value="Insert">
+    </form>
+    
+
+    <!-- Read Operation - Get-->
+    <h2>Get Records</h2>
+    <form action="/get" method="post">
+        <table>
+            <tr>
+                <td>From Date:</td>
+                <td><input type="date" name="fromDate"></td>
+            </tr>
+            <tr>
+                <td>To Date:</td>
+                <td><input type="date" name="toDate"></td>
+            </tr>
+            <tr>
+                <td>Amount (Enter in USD) Greater than:</td>
+                <td><input type="number" name="MINAmount"></td>
+            </tr>
+            <tr>
+                <td>Amount (Enter in USD) Less than:</td>
+                <td><input type="number" name="MAXAmount"></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" name="descriptionKeyword"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Retrieve">
+    </form>
+    
+
+    <!-- Display retrieved records in a table format -->
+
+    <!-- Edit Operation -->
+    <h2>Edit Record</h2>
+
+    <form action="/edit" method="post">
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Original Value</th>
+                <th>Updated Value</th>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td><input type="date" name="originalDate" required></td>
+                <td><input type="date" name="updatedDate" required></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" name="originalDescription" required></td>
+                <td><input type="text" name="updatedDescription" required></td>
+            </tr>
+            <tr>
+                <td>Amount:</td>
+                <td><input type="number" name="originalAmount" required>(USD)</td>
+                <td><input type="number" name="updatedAmount" required>(USD)</td>
+                
+            </tr>
+        </table>
+        <input type="submit" value="Edit">
+    </form>
+    
+
+    <!-- Delete Operation -->
+    <h2>Delete Record</h2>
+    <form action="/delete" method="post">
+        Date: <input type="date" name="delete_date" required><br>
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
